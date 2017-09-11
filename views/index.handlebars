@@ -1,0 +1,46 @@
+<div class="main-container">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <div class="btn-group" role="group" aria-label="...">
+                        <a href="/scrape">
+                            <button type="button" class="btn btn-default">scrape</button>
+                        </a>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </nav>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Articles</h3>
+                </div>
+                {{#each scrape}}
+                    <div class="panel panel-default col-md-10">
+                        <div class="panel-body">
+                            <p>{{this.title}}</p>
+                            <a href="{{this.link}}">{{this.link}}</a>
+                        </div>
+                    </div>
+                    <div class="col-md-2"> 
+                        <a href="/articles/:id">
+                            <button type="button" class="btn btn-default" id="btn">Note</button>
+                        </a>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Notes</h3>
+                </div>
+                <div class="panel-body">
+                    <div id="notes"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
